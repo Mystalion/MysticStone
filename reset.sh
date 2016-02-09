@@ -6,7 +6,12 @@ if [ -d "GlowstonePlusPlus" ]; then
   git reset --hard origin/master
   cd ../
 else
-    git clone https://github.com/GlowstonePlusPlus/GlowstonePlusPlus.git GlowstonePlusPlus
+  git clone https://github.com/GlowstonePlusPlus/GlowstonePlusPlus.git GlowstonePlusPlus
 fi
+
+cd GlowstonePlusPlus
+git submodule init
+git submodule update
+cd ..
 
 echo "Done"
