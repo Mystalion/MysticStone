@@ -1,0 +1,57 @@
+From 7430375f06c6f47c7c1dde76e95154e4b0f8527f Mon Sep 17 00:00:00 2001
+From: Paulomart <paul@paul-h.de>
+Date: Tue, 9 Feb 2016 14:29:32 +0100
+Subject: [PATCH] Pom changes
+
+---
+ pom.xml | 24 +++++++++++++++++-------
+ 1 file changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/pom.xml b/pom.xml
+index dc6600c..cd1bb73 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -1,16 +1,16 @@
+ <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+     <modelVersion>4.0.0</modelVersion>
+-    <groupId>net.glowstoneplusplus</groupId>
+-    <artifactId>glowstoneplusplus</artifactId>
++    <groupId>net.mystalion</groupId>
++    <artifactId>mysticstone</artifactId>
+     <version>1.8.9-SNAPSHOT</version>
+-    <name>GlowstonePlusPlus</name>
+-    <url>https://github.com/GlowstonePlusPlus/GlowstonePlusPlus</url>
++    <name>MysticStone</name>
++    <url>https://github.com/Mystalion/MysticStone</url>
+ 
+     <scm>
+-        <connection>scm:git:git://github.com/GlowstonePlusPlus/GlowstonePlusPlus.git</connection>
+-        <developerConnection>scm:git:ssh://git@github.com/GlowstonePlusPlus/GlowstonePlusPlus.git</developerConnection>
+-        <url>https://github.com/GlowstonePlusPlus/GlowstonePlusPlus</url>
++        <connection>scm:git:git://github.com/Mystalion/MysticStone</connection>
++        <developerConnection>scm:git:ssh://git@github.com/Mystalion/MysticStone</developerConnection>
++        <url>https://github.com/Mystalion/MysticStone</url>
+     </scm>
+ 
+     <properties>
+@@ -150,6 +150,16 @@
+                             <goal>shade</goal>
+                         </goals>
+                         <configuration>
++                            <relocations>
++                               <relocation>
++                                    <pattern>com.flowpowered</pattern>
++                                    <shadedPattern>net.glowstone.lib.com.flowpowered</shadedPattern>
++                                </relocation>
++                                <relocation>
++                                    <pattern>io.netty</pattern>
++                                    <shadedPattern>net.glowstone.lib.io.netty</shadedPattern>
++                                </relocation>
++                            </relocations>
+                             <transformers>
+                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                     <mainClass>net.glowstone.GlowServer</mainClass>
+-- 
+1.9.5.msysgit.1
+
