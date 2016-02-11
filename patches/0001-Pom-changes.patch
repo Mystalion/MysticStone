@@ -1,7 +1,7 @@
-From 2a2212809fa9baf81cd9b861749e1d1dabae6355 Mon Sep 17 00:00:00 2001
+From 548d8f98bd6f239c38b130e250a6c34efb59cca8 Mon Sep 17 00:00:00 2001
 From: Paulomart <paul@paul-h.de>
 Date: Thu, 11 Feb 2016 17:21:32 +0100
-Subject: [PATCH] Pom changes
+Subject: [PATCH 1/2] Pom changes
 
 ---
  pom.xml | 14 +++++++-------

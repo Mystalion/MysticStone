@@ -1,0 +1,25 @@
+From 5e095097ae4c99ad8aa9cdb315f1f1c5bd551adc Mon Sep 17 00:00:00 2001
+From: Paulomart <paul@paul-h.de>
+Date: Thu, 11 Feb 2016 21:29:48 +0100
+Subject: [PATCH 2/2] Allow empty enchants list in nbt
+
+---
+ src/main/java/net/glowstone/inventory/GlowMetaItem.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/main/java/net/glowstone/inventory/GlowMetaItem.java b/src/main/java/net/glowstone/inventory/GlowMetaItem.java
+index a88d11e..08258cb 100644
+--- a/src/main/java/net/glowstone/inventory/GlowMetaItem.java
++++ b/src/main/java/net/glowstone/inventory/GlowMetaItem.java
+@@ -200,7 +200,7 @@ class GlowMetaItem implements ItemMeta {
+ 
+     @Override
+     public boolean hasEnchants() {
+-        return enchants != null && !enchants.isEmpty();
++        return enchants != null;
+     }
+ 
+     @Override
+-- 
+1.9.5.msysgit.1
+
