@@ -1,14 +1,14 @@
-From 7430375f06c6f47c7c1dde76e95154e4b0f8527f Mon Sep 17 00:00:00 2001
+From 2a2212809fa9baf81cd9b861749e1d1dabae6355 Mon Sep 17 00:00:00 2001
 From: Paulomart <paul@paul-h.de>
-Date: Tue, 9 Feb 2016 14:29:32 +0100
+Date: Thu, 11 Feb 2016 17:21:32 +0100
 Subject: [PATCH] Pom changes
 
 ---
- pom.xml | 24 +++++++++++++++++-------
- 1 file changed, 17 insertions(+), 7 deletions(-)
+ pom.xml | 14 +++++++-------
+ 1 file changed, 7 insertions(+), 7 deletions(-)
 
 diff --git a/pom.xml b/pom.xml
-index dc6600c..cd1bb73 100644
+index 20e0b3b..0ad8c30 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -1,16 +1,16 @@
@@ -35,23 +35,6 @@ index dc6600c..cd1bb73 100644
      </scm>
  
      <properties>
-@@ -150,6 +150,16 @@
-                             <goal>shade</goal>
-                         </goals>
-                         <configuration>
-+                            <relocations>
-+                               <relocation>
-+                                    <pattern>com.flowpowered</pattern>
-+                                    <shadedPattern>net.glowstone.lib.com.flowpowered</shadedPattern>
-+                                </relocation>
-+                                <relocation>
-+                                    <pattern>io.netty</pattern>
-+                                    <shadedPattern>net.glowstone.lib.io.netty</shadedPattern>
-+                                </relocation>
-+                            </relocations>
-                             <transformers>
-                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                     <mainClass>net.glowstone.GlowServer</mainClass>
 -- 
 1.9.5.msysgit.1
 
