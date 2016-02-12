@@ -1,0 +1,25 @@
+From 91f110ade52b32db3262be370122f9728fade81c Mon Sep 17 00:00:00 2001
+From: Paulomart <paul@paul-h.de>
+Date: Fri, 12 Feb 2016 17:10:07 +0100
+Subject: [PATCH 3/3] Dont close current inventory when opening new inventory
+
+---
+ src/main/java/net/glowstone/entity/GlowPlayer.java | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/src/main/java/net/glowstone/entity/GlowPlayer.java b/src/main/java/net/glowstone/entity/GlowPlayer.java
+index 3e24474..170606a 100644
+--- a/src/main/java/net/glowstone/entity/GlowPlayer.java
++++ b/src/main/java/net/glowstone/entity/GlowPlayer.java
+@@ -2092,8 +2092,6 @@ public final class GlowPlayer extends GlowHumanEntity implements Player {
+ 
+     @Override
+     public void openInventory(InventoryView view) {
+-        session.send(new CloseWindowMessage(invMonitor.getId()));
+-
+         super.openInventory(view);
+ 
+         invMonitor = new InventoryMonitor(getOpenInventory());
+-- 
+1.9.5.msysgit.1
+
