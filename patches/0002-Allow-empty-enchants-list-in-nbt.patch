@@ -1,7 +1,7 @@
-From a5bd5f8ae2d1ab4b838d22e287eeeca5a105e5cc Mon Sep 17 00:00:00 2001
+From 5e095097ae4c99ad8aa9cdb315f1f1c5bd551adc Mon Sep 17 00:00:00 2001
 From: Paulomart <paul@paul-h.de>
 Date: Thu, 11 Feb 2016 21:29:48 +0100
-Subject: [PATCH 2/3] Allow empty enchants list in nbt
+Subject: [PATCH 2/2] Allow empty enchants list in nbt
 
 ---
  src/main/java/net/glowstone/inventory/GlowMetaItem.java | 2 +-
