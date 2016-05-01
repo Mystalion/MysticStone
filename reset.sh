@@ -6,10 +6,11 @@ if [ -d "GlowstonePlusPlus" ]; then
   git reset --hard origin/master
   cd ../
 else
-  git clone https://github.com/GlowstonePlusPlus/GlowstonePlusPlus.git GlowstonePlusPlus
+  git clone https://github.com/GlowstoneMC/GlowstonePlusPlus.git GlowstonePlusPlus
 fi
 
 cd GlowstonePlusPlus
+git reset --hard v1.8.9
 git submodule init
 git submodule update
 cd ..
