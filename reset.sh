@@ -10,7 +10,6 @@ else
 fi
 
 cd GlowstonePlusPlus
-git reset --hard v1.8.9
 git submodule init
 git submodule update
 cd ..

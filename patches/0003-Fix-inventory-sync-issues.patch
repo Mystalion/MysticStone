@@ -1,4 +1,4 @@
-From 224439aca28eb88845af68ad883d2ee2e52e1ebd Mon Sep 17 00:00:00 2001
+From 49be5f6955c7fed7e1808b27c528d1954c0b60e4 Mon Sep 17 00:00:00 2001
 From: Paulomart <paul@paul-h.de>
 Date: Fri, 12 Feb 2016 17:50:38 +0100
 Subject: [PATCH 3/3] Fix inventory sync issues
@@ -9,10 +9,10 @@ Subject: [PATCH 3/3] Fix inventory sync issues
  2 files changed, 2 insertions(+), 10 deletions(-)
 
 diff --git a/src/main/java/net/glowstone/entity/GlowPlayer.java b/src/main/java/net/glowstone/entity/GlowPlayer.java
-index 3e24474..170606a 100644
+index baa2de0..b834e33 100644
 --- a/src/main/java/net/glowstone/entity/GlowPlayer.java
 +++ b/src/main/java/net/glowstone/entity/GlowPlayer.java
-@@ -2092,8 +2092,6 @@ public final class GlowPlayer extends GlowHumanEntity implements Player {
+@@ -2265,8 +2265,6 @@ public final class GlowPlayer extends GlowHumanEntity implements Player {
  
      @Override
      public void openInventory(InventoryView view) {
@@ -22,10 +22,10 @@ index 3e24474..170606a 100644
  
          invMonitor = new InventoryMonitor(getOpenInventory());
 diff --git a/src/main/java/net/glowstone/net/handler/play/inv/WindowClickHandler.java b/src/main/java/net/glowstone/net/handler/play/inv/WindowClickHandler.java
-index 0916a6c..dc0c6f6 100644
+index f0484cc..c103608 100644
 --- a/src/main/java/net/glowstone/net/handler/play/inv/WindowClickHandler.java
 +++ b/src/main/java/net/glowstone/net/handler/play/inv/WindowClickHandler.java
-@@ -32,10 +32,11 @@ public final class WindowClickHandler implements MessageHandler<GlowSession, Win
+@@ -33,10 +33,11 @@ public final class WindowClickHandler implements MessageHandler<GlowSession, Win
          } catch (IllegalArgumentException ex) {
              GlowServer.logger.warning(session.getPlayer().getName() + ": illegal argument while handling click: " + ex);
          }
@@ -37,8 +37,8 @@ index 0916a6c..dc0c6f6 100644
 -        session.send(new TransactionMessage(message.getId(), message.getTransaction(), result));
      }
  
-     private boolean process(final GlowPlayer player, final WindowClickMessage message) {
-@@ -230,13 +231,6 @@ public final class WindowClickHandler implements MessageHandler<GlowSession, Win
+     private boolean process(GlowPlayer player, WindowClickMessage message) {
+@@ -231,13 +232,6 @@ public final class WindowClickHandler implements MessageHandler<GlowSession, Win
          EventFactory.callEvent(event);
          if (event.isCancelled()) {
              player.getSession().send(new SetWindowSlotMessage(-1, -1, player.getItemOnCursor()));
